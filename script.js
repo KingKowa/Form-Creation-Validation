@@ -6,7 +6,7 @@ const feedbackDiv = document.getElementById('form-feedback');
 
 const username = document.getElementById('username').value.trim();
 
-const email = document.getElementById('email').value.trm();
+const email = document.getElementById('email').value.trim();
 
 const password = document.getElementById('password').value.trim();
 
@@ -26,6 +26,9 @@ function onSubmit(event){
     if(username.length < 3){
         isValid = false;
         messages.push("Invalid User Name");
+        feedbackDiv.style.display="block";
+        feedbackDiv.innerHTML=`${messages}.join(<br>)`;
+        feedbackDiv.style.color="#dc3545";
     }else{
         feedbackDiv.style.display="block";
         feedbackDiv.textContent="Registration successful!";
