@@ -14,6 +14,8 @@ let isValid = true;
 
 let messages = [];
 
+let validEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2, 4})$/;
+
 
 form.addEventListener('submit', onSubmit);
 
@@ -24,6 +26,18 @@ function onSubmit(event){
     if(username.length < 3){
         isValid = false;
         messages.push("Invalid User Name");
+    }else{
+        feedbackDiv.style.display="block";
+        feedbackDiv.textContent="Registration successful!";
+        feedbackDiv.style.color="#28a745";
+    }
+    if(!email.match(validEmail)){
+        isValid = false;
+        messages.push("Invalid Email Address");
+    }
+    if(password.length < 8){
+        isValid = false;
+        messages.push("Password is too short. Minimum of 8 characters required");
     }
 }
 });
