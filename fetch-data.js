@@ -19,3 +19,5 @@ async function fetchUserData(params) {
 
     }
 }
+
+document.addEventListener('DOMContentLoaded', fetchUserData);
