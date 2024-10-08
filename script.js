@@ -27,7 +27,7 @@ function onSubmit(event){
         isValid = false;
         messages.push("Invalid User Name");
         feedbackDiv.style.display="block";
-        feedbackDiv.innerHTML=`${messages}.join(<br>)`;
+        feedbackDiv.innerHTML="<p>[messages].join(<br>)</p>";
         feedbackDiv.style.color="#dc3545";
     }else{
         feedbackDiv.style.display="block";
